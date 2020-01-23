@@ -1,0 +1,29 @@
+<div class="imageupload">
+  <button type="button" class="btn btn-primary" (click)="btnFileUpload($event)"><i class="fa fa-upload"
+      aria-hidden="true"></i> Upload Image</button>
+  <input id="imageupload" type="file" class="hidden" (change)="fileChangeEvent($event)" />
+</div>
+<div class="result-section clearfix" *ngIf='showblob'>
+  <div class="result-img">
+    <h3>Selected Image</h3>
+    <img [src]="finalImage" />
+  </div>
+  <div class="result-blob">
+    <h3>Image Blob</h3>
+    <div class="result-blob-data">
+      {{finalImage}}
+    </div>
+  </div>
+</div>
+<div id="popup1" class="overlay" *ngIf="showcropper">
+  <div class="popup">
+    <div class="content">
+      <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 3"
+        format="png" (imageCropped)="imageCropped($event)"></image-cropper>
+    </div>
+    <div class="popup-footer">
+      <button type="button" (click)='saveCrop()' class="btn btn-primary">OK</button>
+      <button type="button" (click)='cancelcrop()' class="btn btn-secondary">Close</button>
+    </div>
+  </div>
+</div>

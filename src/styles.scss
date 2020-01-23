@@ -1,0 +1,168 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.imageupload {
+	margin: auto;
+	padding: 25px;
+	width: 600px;
+	text-align: center;
+	& .hidden {
+		display: none;
+	}
+	& image-cropper>div:first-child {
+		text-align: left;
+	}
+	.img {
+		&-cropper {
+			clear: both;
+		}
+		&-placeholder {
+			position: fixed;
+			top: 20%;
+			left: 33%;
+			z-index: 999;
+			;
+		}
+		&-result {
+			margin-top: 25px;
+			& img {
+				height: 150px;
+			}
+		}
+	}
+}
+
+.btn {
+	display: inline-block;
+	margin: 5px;
+	margin-bottom: 0;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	user-select: none;
+	&-primary {
+		color: #fff;
+		background-color: #337ab7;
+		border-color: #2e6da4;
+	}
+	&-secondary {
+		border-color: #cccccc;
+	}
+}
+
+.result {
+	&-section {
+		margin: 15px auto;
+		padding: 25px;
+		background-color: #f4f4f4;
+		width: 600px;
+		& h3 {
+			margin: 00px 0px 10px 0px;
+			text-align: center;
+		}
+	}
+	&-img {
+		float: left;
+		width: 50%;
+		& img {
+			width: 260px;
+		}
+	}
+	&-blob {
+		width: 50%;
+		float: left;
+		&-data {
+			padding: 10px;
+			background-color: #ffffff;
+			height: 300px;
+			overflow: auto;
+			word-break: break-all;
+			;
+		}
+	}
+}
+
+.overlay {
+	width: 100%!important;
+}
+
+.cropper {
+	margin-left: 0px!important;
+	min-width: 150px!important;
+	min-height: 150px!important;
+}
+
+.source-image {
+	width: 100%!important;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+	transition: opacity 500ms;
+	visibility: visible;
+	opacity: 1;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 70px auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 5s ease-in-out;
+	&-footer {
+		padding-top: 25px;
+	}
+}
+
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+.popup .close:hover {
+	color: #06D85F;
+}
+
+.popup .content {
+	max-height: 30%;
+}
